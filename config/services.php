@@ -31,4 +31,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'whatsapp' => [
+        'onboarding_otp_enabled' => env('WHATSAPP_ONBOARDING_OTP_ENABLED', false),
+        'endpoint' => env('WHATSAPP_API_ENDPOINT', 'https://backend.wacto.ai/v1/message/send-message'),
+        'token' => env('WHATSAPP_API_TOKEN', env('WACTO_WHATSAPP_TOKEN')),
+        'otp_template' => env('WHATSAPP_OTP_TEMPLATE', 'authentication'),
+        'country_code' => env('WHATSAPP_COUNTRY_CODE', '91'),
+    ],
+
 ];

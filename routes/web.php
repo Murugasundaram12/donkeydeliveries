@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +42,7 @@ Route::get('/rider', [SiteController::class, 'rider'])->name('rider');
 Route::get('/shoptc', [SiteController::class, 'shoptc'])->name('shoptc');
 Route::get('/termsrider', [SiteController::class, 'termsrider'])->name('termsrider');
 Route::get('/user_terms', [SiteController::class, 'user_terms'])->name('user_terms');
+
+Route::post('/subscriber/onboarding/send-otp', [SubscriberController::class, 'sendOnboardingOtp'])->name('subscriber.onboarding.otp.send');
+Route::post('/subscriber/onboarding/verify-otp', [SubscriberController::class, 'verifyOnboardingOtp'])->name('subscriber.onboarding.otp.verify');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback');

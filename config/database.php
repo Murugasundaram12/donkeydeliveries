@@ -63,6 +63,26 @@ return [
             ]) : [],
         ],
 
+        'donkey' => [
+            'driver' => 'mysql',
+            'url' => env('DONKEY_DATABASE_URL'),
+            'host' => env('DONKEY_DB_HOST', env('DB_HOST', '127.0.0.1')),
+            'port' => env('DONKEY_DB_PORT', env('DB_PORT', '3306')),
+            'database' => env('DONKEY_DB_DATABASE', 'admin_donk'),
+            'username' => env('DONKEY_DB_USERNAME', 'admin_donk'),
+            'password' => env('DONKEY_DB_PASSWORD', ''),
+            'unix_socket' => env('DONKEY_DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

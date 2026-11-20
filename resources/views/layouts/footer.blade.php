@@ -90,7 +90,7 @@
     <script src="{{ asset('assets/js/lib/jquery.counterup.js') }}"></script>
     <!--  <script src="{{ asset('assets/js/lib/pace.js') }}"></script> --> 
     <script src="{{ asset('assets/js/lib/scrollIt.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}?v=2026070401"></script>
+    <script src="{{ asset('assets/js/main.js') }}?v=2026112001"></script>
 
 <!-- Bootstrap Icons -->
 <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css') }}" rel="stylesheet">

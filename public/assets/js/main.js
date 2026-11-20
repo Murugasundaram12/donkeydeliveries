@@ -1314,13 +1314,19 @@ $( function() {
 
 
 
-document.addEventListener("mousedown", function () {
-    if (document.activeElement) {
+document.addEventListener("mousedown", function (e) {
+    if (e.target && (e.target.closest('#contactOtpModal') || e.target.closest('.modal') || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) {
+        return;
+    }
+    if (document.activeElement && document.activeElement !== e.target && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
         document.activeElement.blur();
     }
 });
 
 document.addEventListener("focusin", function (e) {
+    if (e.target && (e.target.closest('.modal') || e.target.classList.contains('modal') || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) {
+        return;
+    }
     if (
         e.target.tagName !== "INPUT" &&
         e.target.tagName !== "TEXTAREA" &&
